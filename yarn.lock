@@ -803,6 +803,13 @@
     "@sentry/types" "7.113.0"
     "@sentry/utils" "7.113.0"
 
+"@sentry/tracing@^7.113.0":
+  version "7.113.0"
+  resolved "https://registry.yarnpkg.com/@sentry/tracing/-/tracing-7.113.0.tgz#16e1ca08fdc3bb2e89b24543fa95c7ed3c1eb3d0"
+  integrity sha512-eE7fcIqcIpLAdgt2GKzdHobK802Jf66qo3MywoCAj0BaVuSZpGi4SET/Fcb+ca/s7x65uoaOi1EnmF7SsZpdcA==
+  dependencies:
+    "@sentry-internal/tracing" "7.113.0"
+
 "@sentry/types@7.113.0":
   version "7.113.0"
   resolved "https://registry.npmjs.org/@sentry/types/-/types-7.113.0.tgz"
@@ -2529,6 +2536,7 @@ stats.js@^0.17.0:
   integrity sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==

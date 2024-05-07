@@ -142,7 +142,7 @@ const VideoCarousel: React.FC = () => {
   };
 
   const handleLoadedMetaData = (
-    i: number,
+    _i: number,
     e: React.SyntheticEvent<HTMLVideoElement, Event>
   ) => {
     setLoadedData((prev) => [...prev, e.nativeEvent]);

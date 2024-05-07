@@ -1,11 +1,11 @@
 import { useGSAP } from "@gsap/react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { animateWithGsap } from "../utils/animations";
 import gsap from "gsap";
 import { explore1Img, explore2Img, exploreVideo } from "../utils/constants";
 
 const Features = () => {
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(() => {
     gsap.to("#exploreVideo", {
@@ -15,7 +15,11 @@ const Features = () => {
         start: "-10% bottom",
       },
       onComplete: () => {
-        videoRef.current.play();
+        const videoElement =
+          videoRef.current as unknown as HTMLVideoElement | null;
+        if (videoElement) {
+          videoElement.play();
+        }
       },
     });
 

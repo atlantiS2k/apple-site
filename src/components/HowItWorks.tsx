@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { animateWithGsap } from "../utils/animations";
 import { chipImg, frameImg, frameVideo } from "../utils/constants";
 
 const HowItWorks = () => {
-  const videoRef = useRef();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useGSAP(() => {
     gsap.from("#chip", {

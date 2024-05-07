@@ -52,6 +52,15 @@ const Model = () => {
     gsap.to("#heading", { y: 0, opacity: 1 });
   }, []);
 
+  useEffect(() => {
+    const rootElement = document.getElementById("root");
+    if (rootElement) {
+      setEventSource(rootElement);
+    }
+  }, []);
+
+  const [eventSource, setEventSource] = useState<HTMLElement | undefined>();
+
   return (
     <section className="common-padding">
       <div className="screen-max-width">
@@ -91,7 +100,7 @@ const Model = () => {
                 right: 0,
                 overflow: "hidden",
               }}
-              eventSource={document.getElementById("root")}
+              eventSource={eventSource}
             >
               <View.Port />
             </Canvas>

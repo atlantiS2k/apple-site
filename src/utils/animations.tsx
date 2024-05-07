@@ -17,7 +17,7 @@ interface ScrollProps {
 export const animateWithGsap = (
   target: string | Element | null,
   animationProps: AnimationProps,
-  scrollProps: ScrollProps
+  scrollProps?: ScrollProps
 ): GSAPTween => {
   return gsap.to(target, {
     ...animationProps,
