@@ -49,7 +49,6 @@ const VideoCarousel: React.FC = () => {
     let span = videoSpanRef.current;
 
     if (span[videoId]) {
-      // Animation to move the indicator
       let animation = gsap.to(span[videoId], {
         onUpdate: () => {
           const progress = Math.ceil((animation.progress() as number) * 100);
@@ -129,9 +128,6 @@ const VideoCarousel: React.FC = () => {
         break;
 
       case "pause":
-        setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
-        break;
-
       case "play":
         setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
         break;
@@ -147,6 +143,28 @@ const VideoCarousel: React.FC = () => {
   ) => {
     setLoadedData((prev) => [...prev, e.nativeEvent]);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && videoRef.current[videoId]) {
+            videoRef.current[videoId].load();
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    videoRef.current.forEach((video) => {
+      if (video) observer.observe(video);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [videoId]);
 
   return (
     <>

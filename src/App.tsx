@@ -5,7 +5,6 @@ import Highlights from "./components/Highlights";
 import HowItWorks from "./components/HowItWorks";
 import ModelPhone from "./components/ModelPhone";
 import NavBar from "./components/NavBar";
-import * as Sentry from "@sentry/react";
 
 const App = () => {
   return (
@@ -17,10 +16,11 @@ const App = () => {
         <ModelPhone />
         <Features />
         <HowItWorks />
+        {/* <Chameleon /> */}
         <Footer />
       </main>
     </>
   );
 };
 
-export default Sentry.withProfiler(App);
+export default App;

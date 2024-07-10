@@ -27,11 +27,11 @@ const Footer = () => {
           <p className="font-semibold text-gray text-xs">
             Copright @ 2024 Apple Inc. All rights reserved.
           </p>
-          <div className="flex">
+          <div className="flex hover:text-white transition-all">
             {footerLinks.map((link, i) => (
               <p
                 key={link}
-                className="font-semibold text-gray text-xs transition-all cursor-pointer"
+                className="font-semibold text-gray text-xs hover:text-white transition-all cursor-pointer"
               >
                 {link}{" "}
                 {i !== footerLinks.length - 1 && (
