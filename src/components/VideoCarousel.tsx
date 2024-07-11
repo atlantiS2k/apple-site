@@ -128,6 +128,9 @@ const VideoCarousel: React.FC = () => {
         break;
 
       case "pause":
+        setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
+        break;
+
       case "play":
         setVideo((prev) => ({ ...prev, isPlaying: !prev.isPlaying }));
         break;
